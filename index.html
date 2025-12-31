@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For You ❤️</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- AUDIO -->
+<audio id="bgMusic" loop>
+    <source src="music.mp3" type="audio/mp3">
+</audio>
+
+<!-- INTRO PAGE -->
+<div id="intro">
+
+    <div class="memory-photos">
+        <img src="intro/pic1.jpg" class="memory m1">
+        <img src="intro/pic2.jpg" class="memory m2">
+        <img src="intro/pic3.jpg" class="memory m3">
+        <img src="intro/pic4.jpg" class="memory m4">
+        <img src="intro/pic5.jpg" class="memory m5">
+        <img src="intro/pic6.jpg" class="memory m6">
+    </div>
+
+    <h1 id="typing" class="intro-title"></h1>
+    <p id="subtext" class="intro-sub"></p>
+
+    <div class="intro-buttons">
+        <button class="yes" onclick="showNewYear()">Yes 💖</button>
+        <button class="no" id="noBtn" onclick="noEscape()">No 🙈</button>
+    </div>
+
+</div>
+
+
+
+<!-- HAPPY NEW YEAR PAGE -->
+<div id="newYear" style="display:none;">
+    <h1 id="countdown">3</h1>
+    <p id="nyText">A new year, a new chapter — with you babyy ✨</p>
+
+    <button class="next" onclick="startSurprise()">Next ➜</button>
+    <canvas id="fireworks"></canvas>
+</div>
+
+<!-- GIFTS PAGE -->
+<div id="gifts" style="display:none;">
+    <h1 class="gifts-title">GIFTS FOR YOU</h1>
+
+    <div class="gifts-grid">
+        <img src="gifts/note.png" class="gift-img" onclick="openNote()">
+        <div class="memory-wrap">
+    <img src="gifts/flowers.png" class="gift-img memory" onclick="openMemory()">
+    <div class="memory-label"></div>
+</div>
+
+        <img src="gifts/camera.png" class="gift-img" onclick="openVideo()">
+        <img src="gifts/cat.png" class="gift-img" onclick="openMystery()">
+    </div>
+
+    <button class="next light" onclick="
+    document.getElementById('gifts').style.display='none';
+    document.getElementById('whyYou').style.display='flex';
+">
+    Next ➜
+</button>
+
+</div>
+<!-- WHY YOU PAGE -->
+<div id="whyYou" class="why-page floral-bg" style="display:none;">
+    <div class="petals"></div>
+
+    <div class="why-card love-letter">
+        <p class="why-text">
+            My love <span class="name">cuutuuu</span>,<br><br>
+
+            I don’t love you because it’s easy.<br>
+            I love you because it feels like home.
+            <br><br>
+
+            In every version of me,<br>
+            in every mood,<br>
+            in every silence —
+            <br>
+            <span class="highlight">you stayed.</span>
+            <br><br>
+
+            And if I had a thousand lifetimes,
+            <br>
+            I’d still choose you —
+            <br>
+            <span class="always">every single time.</span>
+        </p>
+
+        <button class="next love-next" onclick="goFinal()">
+            FINAL one➜
+        </button>
+    </div>
+</div>
+<!-- FINAL LOVE PAGE -->
+<div id="finalPage" class="final-page" style="display:none;">
+    <div class="final-card">
+        <p class="final-text">
+            My love cutuuuu,<br>
+            this is for youu —<br>
+            to the most pwettiest girl i ever met🤍
+        </p>
+
+        <video
+            id="finalVideo"
+            class="final-video"
+            src="gifts/final.mp4"
+            playsinline
+            controls>
+        </video>
+
+        <div class="final-sign">
+            — With all my love🤍
+        </div>
+    </div>
+</div>
+
+
+
+<!-- MAIN CONTENT -->
+<div id="mainContent" style="display:none;">
+
+    <div class="reels">
+
+        <!-- REEL 1 -->
+        <section class="reel">
+            <video autoplay muted loop playsinline>
+                <source src="reel1.mp4" type="video/mp4">
+            </video>
+            <div class="text">
+                <h2>You mean everything ❤️</h2>
+            </div>
+        </section>
+
+        <!-- REEL 2 -->
+        <section class="reel slideshow">
+            <img src="img1.jpg" class="active">
+            <img src="img2.jpg">
+            <img src="img3.jpg">
+            <div class="text">
+                <h2>Every memory with you ✨</h2>
+            </div>
+        </section>
+
+        <!-- REEL 3 -->
+        <section class="reel">
+            <video autoplay muted loop playsinline>
+                <source src="reel2.mp4" type="video/mp4">
+            </video>
+            <div class="text">
+                <h2>Forever us 💍</h2>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- BUTTONS -->
+    <div class="actions">
+        <button onclick="toggleMusic()">🎵</button>
+        <button onclick="showLove()">💌</button>
+    </div>
+
+    <div id="secret">I love you more than words ❤️</div>
+
+</div>
+
+<!-- GIFT MODAL -->
+<div id="giftModal">
+    <div id="giftContent"></div>
+</div>
+
+<script src="script.js"></script>
+<audio id="foreverSong" preload="auto">
+    <source src="music/forever-us.mp3" type="audio/mp3">
+</audio>
+
+</body>
+</html>
